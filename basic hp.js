@@ -260,13 +260,13 @@ window.onscroll=function()
         document.getElementById("artName").style.color = '#ededed';
         document.getElementById("artistName").style.color = '#ededed';
         document.getElementById("return_cont").style.backgroundColor = '#454545';
-        var but = document.getElementsByClassName('button');
+        /*var but = document.getElementsByClassName('button');
         for(let i=0; i<but.length; i++)
         {
           but[i].style.backgroundColor = '#454545';
           but[i].style.color = '#121212';
           but[i].style.borderColor = '#454545';
-        }
+        }*/
       }
       else
       {
@@ -276,13 +276,13 @@ window.onscroll=function()
         document.getElementById("artName").style.color = '#121212';
         document.getElementById("artistName").style.color = '#121212';
         document.getElementById("return_cont").style.backgroundColor = 'none';
-        var but = document.getElementsByClassName('button');
+        /*var but = document.getElementsByClassName('button');
         for(let i=0; i<but.length; i++)
         {
           but[i].style.backgroundColor = 'none';
           but[i].style.color = 'none';
           but[i].style.borderColor = '#d2d2d2';
-        }
+        }*/
       }
     }
 
