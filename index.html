@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="basic hp.css">
+    <script>
+      window.onload=function()
+      {
+        setInterval("show_banner_img()", 4000);                              //triggering slideshow with 4s interval
+        gen_random(12,'hpimg',0);                                             //gathering 9 random and different images from gallery for grid display 
+        document.getElementById("load_pg").style.opacity='0';                //setting opacity to 0 and visibility hidden of cover page to give fade in effect
+        document.getElementById("load_pg").style.visibility= 'hidden';
+        viewCheck_index();
+      }
+    </script>
+    <script type="text/javascript">
+      function noenter() {
+        return !(window.event && window.event.keyCode == 13); }
+    </script>
+  </head>
+<body>
+  <!-- Loading page to fade out on window load -->
+  <div id="load_pg"></div>
+
+  <!-- Search page overlay -->
+  <div id="search_overlay">
+    <div id="overlay_content">
+      <form action="" id="search_form">
+        <input type="text" id="searchbar" placeholder="search" name="searchbar" autocomplete="off" onkeypress="return noenter()">
+        <img id="searchicon" type="image" src="search.png" onclick ="find()">
+       <!-- <img type="submit" id="searchicon" src="search.png"><a id="closebtn" href="" onclick="closeovrlay()"></a></img>-->
+      </form>
+      <div id="cls_search_overlay" onclick="close_overlay()">&times;</div>
+    </div>
+    <div id="result">
+      <div id="resultdc">No results found....</div>
+      <a href="image1.html"><div class="srch_img_cont" onclick="imgClick('s0')"></div></a>
+      <a href="image1.html"><div class="srch_img_cont" onclick="imgClick('s1')"></div></a>
+      <a href="image1.html"><div class="srch_img_cont" onclick="imgClick('s2')"></div></a>
+      <a href="image1.html"><div class="srch_img_cont" onclick="imgClick('s3')"></div></a>
+      <a href="image1.html"><div class="srch_img_cont" onclick="imgClick('s4')"></div></a>
+      <a href="image1.html"><div class="srch_img_cont" onclick="imgClick('s5')"></div></a>
+      <a href="image1.html"><div class="srch_img_cont" onclick="imgClick('s6')"></div></a>
+      <a href="image1.html"><div class="srch_img_cont" onclick="imgClick('s7')"></div></a>
+      <a href="image1.html"><div class="srch_img_cont" onclick="imgClick('s8')"></div></a>
+      <a href="image1.html"><div class="srch_img_cont" onclick="imgClick('s9')"></div></a>
+      <a href="image1.html"><div class="srch_img_cont" onclick="imgClick('s10')"></div></a>
+      <a href="image1.html"><div class="srch_img_cont" onclick="imgClick('s11')"></div></a>
+      <a href="image1.html"><div class="srch_img_cont" onclick="imgClick('s12')"></div></a>
+      <a href="image1.html"><div class="srch_img_cont" onclick="imgClick('s13')"></div></a>
+      <a href="image1.html"><div class="srch_img_cont" onclick="imgClick('s14')"></div></a>
+      <a href="image1.html"><div class="srch_img_cont" onclick="imgClick('s15')"></div></a>
+      <a href="image1.html"><div class="srch_img_cont" onclick="imgClick('s16')"></div></a>
+      <a href="image1.html"><div class="srch_img_cont" onclick="imgClick('s17')"></div></a>
+      <a href="image1.html"><div class="srch_img_cont" onclick="imgClick('s18')"></div></a>
+      <a href="image1.html"><div class="srch_img_cont" onclick="imgClick('s19')"></div></a>
+      <a href="image1.html"><div class="srch_img_cont" onclick="imgClick('s20')"></div></a>
+    </div>
+  </div>
+
+  <!-- Navigation bar -->
+  <div id="navigation">
+
+    <!-- Two logos, for day mode & night mode -->
+    <a id="logo" href="index.html">
+      <img id="logo_img" src="logo.jpg">
+      <img id="nightlogo_img" src="nightlogo.jpg">
+    </a>
+    <!-- List of links -->
+    <div id="navbar">
+      <ul>
+        <li><a class="hplink" href="">home</a></li>
+        <li><a class="link" href="shuffle_images.html">shuffle</a></li>
+        
+        
+        <li><a class="link" href="">about</a></li>
+      </ul>
+    </div>
+    <!-- Search icon to toggle search overlay -->
+    <div id="search">
+      <img id="hp_search_icon" src="search.png" onclick="open_overlay()">
+      <img id="hp_night_search_icon" src="nightsearch.png" onclick="open_overlay()">
+    </div>
+    <!-- Day/Night toggle switch -->
+    <label id="day_night_switch">
+      <span id="day">DAY</span>
+      <span id="night">NIGHT</span>
+      <input id="dnsw" type="checkbox" onclick="change_view()">
+      <span class="slider round"><span id = "slider_before"></span></span>
+    </label>
+  </div>
+
+  <!-- Hero art slideshow -->
+  <div id="banner">
+    <img id="banner_img" name="slideshow" src="p4.jpg">
+    <div id="banner_ctrl">
+      <div class="bn_btn">
+        <div class="bn_btn_hg"></div>
+      </div>
+      <div class="bn_btn">
+        <div class="bn_btn_hg"></div>
+      </div>
+      <div class="bn_btn">
+        <div class="bn_btn_hg"></div>
+      </div>
+      <div class="bn_btn">
+        <div class="bn_btn_hg"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Art display in grid format -->
+  <div id="row">
+    <div class="column">
+      <a href="image1.html"><img class="hpimg" src="" onclick="imgClick(0)"></a>
+      <p class="hpimgtxt">This is the titleThis is the first img</p>
+      <a href="image1.html"><img class="hpimg" src="" onclick="imgClick(1)"></a>
+      <p class="hpimgtxt">This is the titleThis is the first img</p>
+      <a href="image1.html"><img class="hpimg" src="" onclick="imgClick(2)"></a>
+      <p class="hpimgtxt">This is the titleThis is the first img</p>
+      <a href="image1.html"><img class="hpimg" src="" onclick="imgClick(3)"></a>
+      <p class="hpimgtxt">This is the titleThis is the first img</p>
+    </div>
+    <div class="column">
+      <a href="image1.html"><img class="hpimg" src="" onclick="imgClick(4)"></a>
+      <p class="hpimgtxt">This is the titleThis is the first img</p>
+      <a href="image1.html"><img class="hpimg" src="" onclick="imgClick(5)"></a>
+      <p class="hpimgtxt">This is the titleThis is the first img</p>
+      <a href="image1.html"><img class="hpimg" src="" onclick="imgClick(6)"></a>
+      <p class="hpimgtxt">This is the titleThis is the first img</p>
+      <a href="image1.html"><img class="hpimg" src="" onclick="imgClick(7)"></a>
+      <p class="hpimgtxt">This is the titleThis is the first img</p>
+    </div>
+    <div class="column">
+      <a href="image1.html"><img class="hpimg" src="" onclick="imgClick(8)"></a>
+      <p class="hpimgtxt">This is the titleThis is the first img</p>
+      <a href="image1.html"><img class="hpimg" src="" onclick="imgClick(9)"></a>
+      <p class="hpimgtxt">This is the titleThis is the first img</p>
+      <a href="image1.html"><img class="hpimg" src="" onclick="imgClick(10)"></a>
+      <p class="hpimgtxt">This is the titleThis is the first img</p>
+      <a href="image1.html"><img class="hpimg" src="" onclick="imgClick(11)"></a>
+      <p class="hpimgtxt">This is the titleThis is the first img</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer">
+    <img id="footer_img" src="footer_ill.png" alt="">
+    <img id="circle" src="circle2.png" alt="">
+    <div id="footer_head">
+      <p id="footerp">let's build <br>something <br> beautiful</p>
+      <a href="https://forms.gle/JmJh3oq5gkmN9A7W9" target="_blank"><button>send in your work
+        <!-- <div id="footer_over"></div> -->
+      </button></a>
+      <div id="links">
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+        <!--<a href="https://gmail.com">Mail us</a>-->
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=harshit3271arch19@spa.ac.in" target="_blank">Mail Us</a>
+        <a href="about.com">About us</a>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="basic hp.js"></script>
+</html>
