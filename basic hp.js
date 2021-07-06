@@ -296,6 +296,7 @@ window.onscroll=function()
         }
         document.body.style.backgroundColor="#141414";
         document.getElementById("dnsw").checked = true;
+        localStorage.setItem("viewMode", 0);
       }
       else
       {
@@ -318,6 +319,7 @@ window.onscroll=function()
         }
         document.body.style.backgroundColor="#dddddd";
         document.getElementById("dnsw").checked = false;
+        localStorage.setItem("viewMode", 1);
       }
     }
 
